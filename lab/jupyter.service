@@ -1,0 +1,16 @@
+# /etc/systemd/system/jupyter.service
+[Unit]
+Description=Jupyter Workplace
+
+[Service]
+Type=simple
+PIDFile=/run/jupyter.pid
+ExecStart=/usr/local/bin/jupyter-lab
+User=blueapm
+Group=blueapm
+WorkingDirectory=/home/blueapm/work/lab
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
