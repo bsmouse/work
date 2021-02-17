@@ -6,10 +6,9 @@ import paho.mqtt.client as mqtt
 from time import sleep
 # import sys
 
-
+# test 003
 # First go to the "/var/www/html" directory
 # os.chdir("C:/Users/admin/Desktop/HSEC/darknet-master/darknet-master/build/darknet/x64")
-
 # Print current working directory
 # print("Current working dir : %s" % os.getcwd())
 
