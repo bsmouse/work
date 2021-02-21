@@ -12,11 +12,12 @@ def read_time():
     global client
     pub_count += 1
 
-    str_time = datetime.today().strftime("%Y/%m/%d %H:%M:%S")
+    # str_time = datetime.today().strftime("%Y/%m/%d %H:%M:%S")
+    str_time = datetime.today().strftime("%H:%M:%S")
     client.publish("sensors/time/{:03d}".format(pub_count), str_time)
 
     print("Sent({:03d}) : {}".format(pub_count, str_time))
-    sleep(15)
+    sleep(30)
 
 
 def on_connect(client, userdata, flags, rc):
@@ -46,7 +47,9 @@ client.on_connect = on_connect
 client.on_disconnect = on_disconnect
 client.on_subscribe = on_subscribe
 client.on_message = on_message
+client.username_pw_set(username="blueapm", password="1234qwer")
 
+# client.connect('dev20.vm', 1883)
 client.connect('dev20.gcp', 1883)
 client.loop_start()
 

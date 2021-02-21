@@ -6,7 +6,7 @@ import paho.mqtt.client as mqtt
 from time import sleep
 # import sys
 
-# test 003
+# test 005
 # First go to the "/var/www/html" directory
 # os.chdir("C:/Users/admin/Desktop/HSEC/darknet-master/darknet-master/build/darknet/x64")
 # Print current working directory
@@ -36,6 +36,7 @@ def read_authcount():
 
 
 client = mqtt.Client("sensor_pub")
+# client.connect("dev20.vm", 1883, 60)
 client.connect("dev20.gcp", 1883, 60)
 #client.connect("seoamo.wr", 1883, 60)
 read_authcount()
